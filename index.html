@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>A Birthday Surprise For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. LOGIN PAGE -->
+  <section id="login" class="screen active">
+    <div class="float-hearts" aria-hidden="true"></div>
+    <form id="loginForm" class="card login-card" autocomplete="off">
+      <div class="logo-heart" aria-hidden="true">&#10084;</div>
+      <h1 class="script">A Surprise For You</h1>
+      <p class="sub">Please enter your name to open it</p>
+      <input id="nameInput" type="text" maxlength="30" placeholder="Your name" aria-label="Your name" required>
+      <p id="loginError" class="error" role="alert"></p>
+      <button type="submit" class="btn">Open My Surprise</button>
+    </form>
+  </section>
+
+  <!-- 2. LOADING PAGE (5 seconds) -->
+  <section id="loading" class="screen">
+    <div class="loader-wrap">
+      <div class="pulse-heart" aria-hidden="true">&#10084;</div>
+      <h2 class="script" id="loadingText">Getting your surprise ready...</h2>
+      <div class="bar"><div id="barFill"></div></div>
+      <p class="sub" id="countdown">5</p>
+    </div>
+  </section>
+
+  <!-- 3. VIDEO PAGE -->
+  <section id="videoScreen" class="screen">
+    <div class="video-frame">
+      <video id="wishVideo" src="birthday_wish.mp4" preload="auto" playsinline></video>
+      <button id="tapPlay" class="btn tap-play" hidden>Tap to play</button>
+    </div>
+    <button id="skipBtn" class="skip">Skip &#9654;</button>
+  </section>
+
+  <!-- 4. WISHING PAGE -->
+  <section id="wishScreen" class="screen">
+    <canvas id="fireworks"></canvas>
+    <div id="balloons" aria-hidden="true"></div>
+    <div class="letter-wrap">
+      <article class="letter">
+        <div class="corner tl">&#10086;</div><div class="corner tr">&#10086;</div>
+        <div class="corner bl">&#10086;</div><div class="corner br">&#10086;</div>
+        <h2 class="script title">Happy Birthday, <span id="who">my love</span>!</h2>
+        <div id="letterBody" class="body"></div>
+        <p id="signoff" class="sign script"></p>
+        <button id="replayBtn" class="btn small" hidden>Watch again</button>
+      </article>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
